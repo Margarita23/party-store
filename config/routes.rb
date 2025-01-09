@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   get "/current_user", to: "users#show"
 
+  resources :orders, except: [:new, :edit]
+
 end
