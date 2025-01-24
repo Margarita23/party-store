@@ -32,6 +32,7 @@ gem 'devise-jwt'
 gem "jsonapi-serializer"
 gem 'rack-cors', require: 'rack/cors'
 gem 'cancancan'
+gem "active_model_serializers", "~> 0.10.9"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

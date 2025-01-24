@@ -10,11 +10,9 @@ class Ability
 
     if user.role == "admin"
       can :manage, :all
-      # can :crud, [Items, Users]
     else
-
-      can :read, [Items] 
-    
+      can :read, [Item]
+      cannot :index, User
     end
     # Define abilities for the user here. For example:
     #

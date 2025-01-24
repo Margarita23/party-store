@@ -5,10 +5,10 @@ class OrdersController < ActionController::API
       orders = current_user.orders.includes(:items)
       render json: orders, include: :items
     end
-  
+
     def show
-      order = current_user.orders.find(params[:id])
-      render json: order, include: :items
+      order = current_user.orders.includes(:items, :order_descriptions).find(params[:id])
+      render json: order, each_serializer: OrderSerializer
     end
   
     def create

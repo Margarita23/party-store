@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   },
   controllers: {
     sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
   },
   defaults: { format: :json }
 
@@ -14,10 +15,11 @@ Rails.application.routes.draw do
 
   put "/profile", to: "users#update"
 
-  get "/items", to: "items#index"
-
   get "/current_user", to: "users#show"
 
+  get "/users", to: "users#index"
+
   resources :orders, except: [:new, :edit]
+  resources :items, except: [:new, :edit]
 
 end
